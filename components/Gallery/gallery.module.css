@@ -1,0 +1,9 @@
+.gallery{
+    height: 180vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #fff;
+}

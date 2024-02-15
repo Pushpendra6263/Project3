@@ -1,0 +1,49 @@
+.landing{
+    position: relative;
+    width: 100%;
+    height: 110vh;
+    overflow :  hidden;
+    /* background-color: red; */
+}
+.landing >img{
+    height: 110vh;
+    object-fit: contain;
+    object-position: center;
+}
+.content{
+    height: 200px;
+    width: 30%;
+    position: absolute;
+    top: 25%;
+    right: 0%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.content > h1{
+    color: white;
+    font-weight: 100;
+}
+.slidContainer{
+    position: absolute;
+    top: calc(100vh - 300px);
+}
+.slider {
+    position: relative;
+    width: 100%;
+    display: flex;
+    white-space: nowrap;
+}
+.slider h1{
+    position: relative;
+    font-size: 170px;
+    font-weight: 400;
+    color: white;
+    padding-right: 50px;
+}
+.slider h1:nth-of-type(2) {
+    position: absolute;
+    left: 100%;
+    top: 0;
+}
