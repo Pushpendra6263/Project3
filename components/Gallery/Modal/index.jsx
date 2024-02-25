@@ -28,35 +28,74 @@ const index = ({modal,projects}) => {
     const modalContainer = useRef(null);
     const cursor = useRef(null);
 
+
+    // useEffect(() => {
+
+    //     let xMoveContainer = gsap.quickTo(modalContainer.current, "left", {
+    //         duration: 0.8,
+    //         ease: "power3",
+    //     });
+
+    //     let yMoveContainer = gsap.quickTo(modalContainer.current, "top", {
+    //         duration: 0.8,
+    //         ease: "power3",
+    //     });
+
+    //     let xMoveCursor = gsap.quickTo(cursor.current, "left", {
+    //         duration: 0.45,
+    //         ease: "power3",
+    //     });
+
+    //     let yMoveCursor = gsap.quickTo(cursor.current, "top", {
+    //         duration: 0.45,
+    //         ease: "power3",
+    //     });
+
+    //     window.addEventListener("mousemove", (e) => {
+    //         const { pageX, pageY } = e;
+    //         xMoveContainer(pageX);
+    //         yMoveContainer(pageY);
+    //         xMoveCursor(pageX);
+    //         yMoveCursor(pageY);
+    //     });
+    // }, []);
+
     useEffect(() => {
-
-        let xMoveContainer = gsap.quickTo(modalContainer.current, "left", {
-            duration: 0.8,
-            ease: "power3",
-        });
-
-        let yMoveContainer = gsap.quickTo(modalContainer.current, "top", {
-            duration: 0.8,
-            ease: "power3",
-        });
-
-        let xMoveCursor = gsap.quickTo(cursor.current, "left", {
-            duration: 0.45,
-            ease: "power3",
-        });
-
-        let yMoveCursor = gsap.quickTo(cursor.current, "top", {
-            duration: 0.45,
-            ease: "power3",
-        });
-
-        window.addEventListener("mousemove", (e) => {
-            const { pageX, pageY } = e;
-            xMoveContainer(pageX);
-            yMoveContainer(pageY);
-            xMoveCursor(pageX);
-            yMoveCursor(pageY);
-        });
+        if (typeof window !== 'undefined') {
+            let xMoveContainer = gsap.quickTo(modalContainer.current, "left", {
+                duration: 0.8,
+                ease: "power3",
+            });
+    
+            let yMoveContainer = gsap.quickTo(modalContainer.current, "top", {
+                duration: 0.8,
+                ease: "power3",
+            });
+    
+            let xMoveCursor = gsap.quickTo(cursor.current, "left", {
+                duration: 0.45,
+                ease: "power3",
+            });
+    
+            let yMoveCursor = gsap.quickTo(cursor.current, "top", {
+                duration: 0.45,
+                ease: "power3",
+            });
+    
+            const handleMouseMove = (e) => {
+                const { pageX, pageY } = e;
+                xMoveContainer(pageX);
+                yMoveContainer(pageY);
+                xMoveCursor(pageX);
+                yMoveCursor(pageY);
+            };
+    
+            window.addEventListener("mousemove", handleMouseMove);
+    
+            return () => {
+                window.removeEventListener("mousemove", handleMouseMove);
+            };
+        }
     }, []);
 
     return (

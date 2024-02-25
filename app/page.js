@@ -19,11 +19,11 @@ const page = () => {
 
   return (
     <div className={css.main}>
-      <Nav/>
-      <Landing/>
-      <Gallery/>
-      <SlidingImages/>
-      <Footer/>
+      <Nav />
+      <Landing />
+      <Gallery />
+      <SlidingImages />
+      <Footer />
     </div>
   )
 }
