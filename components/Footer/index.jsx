@@ -31,7 +31,7 @@ const index = () => {
         <div className={css.text}>
 
           <h1>
-            <Image src={'/background.jpg'} width={80} height={80} />
+            <Image src={'/me.png'} width={80} height={80} />
             Let's work <br /> together
           </h1>
 

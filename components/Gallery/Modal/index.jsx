@@ -1,3 +1,4 @@
+
 import React from 'react'
 import css from './modal.module.css'
 import Image from "next/image";
@@ -21,7 +22,7 @@ const animateVarients = {
     },
 };
 
-const index = ({modal,projects}) => {
+const index = ({ modal, projects }) => {
 
     const { active, index } = modal;
 
@@ -60,8 +61,47 @@ const index = ({modal,projects}) => {
     //     });
     // }, []);
 
+    // useEffect(() => {
+        
+    //     if (typeof window !== 'undefined') {
+    //         let xMoveContainer = gsap.quickTo(modalContainer.current, "left", {
+    //             duration: 0.8,
+    //             ease: "power3",
+    //         });
+
+    //         let yMoveContainer = gsap.quickTo(modalContainer.current, "top", {
+    //             duration: 0.8,
+    //             ease: "power3",
+    //         });
+
+    //         let xMoveCursor = gsap.quickTo(cursor.current, "left", {
+    //             duration: 0.45,
+    //             ease: "power3",
+    //         });
+
+    //         let yMoveCursor = gsap.quickTo(cursor.current, "top", {
+    //             duration: 0.45,
+    //             ease: "power3",
+    //         });
+
+    //         const handleMouseMove = (e) => {
+    //             const { pageX, pageY } = e;
+    //             xMoveContainer(pageX);
+    //             yMoveContainer(pageY);
+    //             xMoveCursor(pageX);
+    //             yMoveCursor(pageY);
+    //         };
+    //         window.addEventListener("mousemove", handleMouseMove);
+
+    //         return () => {
+    //             window.removeEventListener("mousemove", handleMouseMove);
+    //         };
+    //     }
+    // }, []);
+
     useEffect(() => {
         if (typeof window !== 'undefined') {
+            // Your window-dependent code here
             let xMoveContainer = gsap.quickTo(modalContainer.current, "left", {
                 duration: 0.8,
                 ease: "power3",
@@ -89,7 +129,6 @@ const index = ({modal,projects}) => {
                 xMoveCursor(pageX);
                 yMoveCursor(pageY);
             };
-    
             window.addEventListener("mousemove", handleMouseMove);
     
             return () => {
@@ -97,6 +136,7 @@ const index = ({modal,projects}) => {
             };
         }
     }, []);
+    
 
     return (
         <>
@@ -131,7 +171,7 @@ const index = ({modal,projects}) => {
 
                 </div>
             </motion.div>
-            
+
             <motion.div
                 variants={animateVarients}
                 initial="initial"

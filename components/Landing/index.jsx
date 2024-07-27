@@ -46,7 +46,7 @@ const index = () => {
 
   return (
     <div className={css.landing}>
-        <Image src={"/background1.jpg"} fill={true} alt="bhai ki photo" data-scroll data-scroll-speed="-.3" />
+        <Image src={"/me3.png"} fill={true} alt="bhai ki photo" data-scroll data-scroll-speed="-.3" />
 
         <div className={css.content}>
 
